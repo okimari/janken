@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/colorbox.css">
   <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
@@ -98,8 +96,6 @@
           </div>
         </div>
       </form>
-
-
     </div>
   </div>
 

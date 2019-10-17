@@ -33,7 +33,9 @@ if ($status == false) {
     $view .= '<td>' . $result['url'] . '</td>'; //書籍のURL
     $view .= '<td>' . $result['comment'] . '</td>'; //本のコメント
     $view .= '<td class="category">' . $result['category'] . '</td>'; //カテゴリーだけlist.jsで呼び出すのでclss名追加
-    $view .= '<td>' . $result['indate'] . '</td>'; //日時
+    $view .= '<td>' . $result['indate'] . '</td>'; //日時 
+    $view .= '<td><a href="detail.php?id=' . $result['id'] . '" class="badge badge-primary">Edit</a></td>'; //日時
+    $view .= '<td><a href="delete.php?id=' . $result['id'] . '" class="badge badge-danger">Delete</a></td>'; //日時
     $view .= '</tr>';
   }
 }
@@ -78,11 +80,13 @@ if ($status == false) {
 
   <div id="list_boxs">
 
+    <p>カテゴリーで検索してね</p>
+    <p>[MANGA]・[NOVEL]・[DESIGN]・[LIVING]</p>
+
     <input id="custom-search-field" placeholder="Search name" />
     <button class="sort" data-sort="category">
       検索
     </button>
-
 
     <!-- ここにDBから取得したデータを表示しよう -->
     <table class="table table-striped">
@@ -93,6 +97,8 @@ if ($status == false) {
           <th>感想コメント</th>
           <th>CATEGORY</th>
           <th>登録日時</th>
+          <th>編集</th>
+          <th>削除</th>
         </tr>
       </thead>
       <tbody class="list">
@@ -101,11 +107,9 @@ if ($status == false) {
     </table>
   </div>
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/list.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
-
 
   <!-- list.jsの指定 -->
   <script>

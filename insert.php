@@ -1,5 +1,6 @@
 <?php
-var_dump($_POST);
+// exit('erro');
+// var_dump($_POST);
 // 入力チェック
 
 
@@ -7,18 +8,22 @@ if (
   !isset($_POST['name']) || $_POST['name'] == '' ||
   !isset($_POST['url']) || $_POST['url'] == '' ||
   !isset($_POST['comment']) || $_POST['comment'] == '' ||
+  // !isset($_POST['category']) || $_POST['category'] == '' ||
   !isset($_POST['indate']) || $_POST['indate'] == ''
 ) {
   exit('ParamError');
 }
 
+// exit('erro');
+// var_dump($_POST);
+
 
 //categoryを取得する
 if (isset($_POST['category'])) {
   $category = $_POST['category'];
-  echo '満足度：' . $category . '<br>';
+  echo 'カテゴリー：' . $category . '<br>';
 } else {
-  echo '満足度が選択されていません。<br>';
+  echo 'カテゴリーが選択されてなーい<br>';
 }
 
 
